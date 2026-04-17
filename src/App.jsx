@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import virtuproLogo from './assets/virtupro-logo.png'
 import ahmedLondon   from './assets/ahmed-london.png'
+import ahmedMain     from './assets/ahmed-main.png'
 import caseZoom      from './assets/case-zoom.jpeg'
 
 const GHL_FORM_ID = 'DtSKk7FAqjtiph1IZj3i'
@@ -11,44 +12,44 @@ const ROADMAPS = [
   {
     range: '1–10',
     label: '1–10 properties',
-    tag: 'Building the foundation',
-    headline: 'Stop reacting. Start running a system.',
+    tag: 'What VirtuPro handles at this stage',
+    headline: 'Your inbox, your pricing, your claims. All of it off your plate.',
     points: [
-      'The reply-time rule that protects your Airbnb ranking every hour',
-      'How to get to 90%+ occupancy without touching your nightly rate',
-      'The 5 things guests complain about that never show up in checkout messages',
-      'The damage claim process that recovers £1,000+ per claim, step by step',
-      'What to build now so adding properties later doesn\'t add hours to your week',
+      'Guest communications answered in under 3 minutes, 24/7 — by our team, not you',
+      '87%+ average occupancy delivered through VirtuPro\'s pricing and listing management',
+      'Every guest complaint intercepted and resolved before it becomes a public review',
+      'Every damage claim filed, managed, and won — 9 out of 10, without a single message from you',
+      'Operations built to scale: adding properties adds income, not hours to your week',
     ],
-    result: 'From 60+ hours/week to a portfolio that runs without you at the weekend.',
+    result: 'Our clients at this stage get their evenings back within the first 30 days.',
   },
   {
     range: '10–30',
     label: '10–30 properties',
-    tag: 'Scaling without burning out',
-    headline: 'Your next 20 units shouldn\'t cost you your evenings.',
+    tag: 'What VirtuPro handles at this stage',
+    headline: 'A full operations team behind your portfolio. For a flat monthly fee.',
     points: [
-      'How to hand off guest communications without ratings dropping',
-      'The SOP framework VirtuPro uses across 2,000+ units, stripped down for independent owners',
-      'Cleaning and maintenance coordination that doesn\'t require you to chase anyone',
-      'How to run dynamic pricing across 10+ listings without paying for expensive tools',
-      'The review management system that keeps 4.9 intact as volume grows',
+      'Full guest communications team: ratings maintained or improved from day one',
+      'VirtuPro\'s operating system deployed across your listings — the same framework behind 2,000+ units',
+      'Cleaning, maintenance, and contractor coordination managed entirely by our team',
+      'Dynamic pricing managed weekly across every listing — no software costs, no manual work',
+      'Review management that keeps your 4.9 intact as the portfolio grows',
     ],
-    result: 'Grow from 10 to 30 properties without needing to be online at midnight.',
+    result: 'Our clients grow from 10 to 30 properties without adding a single working hour.',
   },
   {
     range: '30+',
     label: '30+ properties',
-    tag: 'True passive income',
-    headline: 'At this scale, you\'re running a business. It needs to work like one.',
+    tag: 'What VirtuPro handles at this stage',
+    headline: 'Enterprise-level operations behind your portfolio. Still a flat fee.',
     points: [
-      'The team structure VirtuPro uses: roles, shifts, and accountability without micromanagement',
-      'How to build SOPs that let junior staff handle 90% of guest interactions correctly',
-      'Revenue optimisation at scale: occupancy, pricing, upsells, and claim recovery across 30+ units',
-      'The reporting framework that tells you which properties earn, which drain, and why',
-      'What "passive income" actually looks like at this size, and what still requires your attention',
+      'Dedicated team with defined roles, shifts, and accountability — none of it managed by you',
+      'Our SOPs handle 90% of guest interactions correctly, without your involvement',
+      'Full revenue optimisation across every unit: occupancy, pricing, upsells, and 9/10 damage claims won',
+      'Monthly reporting from our team: which properties earn, which drain, and what we are doing about it',
+      'True passive income at scale — you review a monthly report, we run the operation',
     ],
-    result: 'A portfolio that grows monthly without adding to your personal workload.',
+    result: 'At 30+ properties, our clients stop working in the business entirely.',
   },
 ]
 
@@ -129,6 +130,7 @@ function LeadForm({ onSuccess }) {
         body: JSON.stringify(values),
       })
       if (!res.ok) throw new Error('failed')
+      if (window.fbq) window.fbq('track', 'Lead')
       onSuccess(values)
     } catch {
       setStatus('error')
@@ -238,6 +240,11 @@ function ThankYouPage({ data }) {
 
 function App() {
   const [submitted, setSubmitted] = useState(null)
+
+  useEffect(() => {
+    if (window.fbq) window.fbq('track', 'PageView')
+  }, [])
+
   if (submitted) return <ThankYouPage data={submitted} />
 
   return (
@@ -255,12 +262,12 @@ function App() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Free for UK Holiday Let Owners</p>
-            <h1>The Growth Roadmap for Where You Are Right Now.</h1>
+            <h1>The Roadmap to Handing Your Portfolio to a Team That Runs It for You.</h1>
             <p className="subline">
-              Managing 5 properties is a different problem to managing 25. Most advice doesn't know the difference. This roadmap does.
+              Managing 5 properties needs a different operation to managing 25. This roadmap shows exactly what VirtuPro takes off your plate at each stage.
             </p>
             <p className="desc">
-              VirtuPro manages 2,000+ UK holiday lets. This is the exact path, by portfolio size, that takes owners from overwhelmed to genuinely passive.
+              VirtuPro runs 2,000+ UK holiday lets end-to-end — guest comms, pricing, damage claims, reviews, all of it. This is the exact handover path, by portfolio size, that moves owners from involved to completely passive.
             </p>
             <div className="hero-trust">
               <span className="hero-trust-item">2,000+ units managed</span>
@@ -318,24 +325,24 @@ function App() {
             <div className="pain-content">
               <div className="pain-heading-row">
                 <p className="eyebrow">Why most owners stay stuck</p>
-                <h2>The advice that helped you get to 5 properties will not help you get to 20.</h2>
+                <h2>More properties shouldn't mean more of your time. But without the right backend, they do.</h2>
               </div>
               <div className="pain-rows">
                 {[
                   {
                     i: '01',
-                    heading: 'What works at 3 properties breaks at 10.',
-                    body: 'Handling messages yourself is fine when you have 3 properties. At 10, it\'s 60+ messages a day. The systems don\'t scale. Neither do you. The roadmap shows you what to build before the volume hits.',
+                    heading: 'At 10 properties, guest messages alone take 3+ hours a day.',
+                    body: 'VirtuPro\'s team handles every guest message in under 3 minutes, around the clock. No templates, no delays — trained agents who know your properties. At this stage, the roadmap shows exactly how the handover works.',
                   },
                   {
                     i: '02',
-                    heading: 'Growth without a system just means more chaos.',
-                    body: 'Most owners add properties without changing how they operate. Reviews drop, reply times slow, claims pile up. The answer isn\'t fewer properties. It\'s the operating model that lets you hold more without working more hours.',
+                    heading: 'Growth without a backend just adds chaos.',
+                    body: 'Reviews drop, pricing goes stale, damage claims go unfiled. VirtuPro deploys the same operating system across your listings from day one — pricing managed weekly, claims filed and won, quality maintained as the portfolio grows.',
                   },
                   {
                     i: '03',
-                    heading: '30+ properties with no team is a job, not an investment.',
-                    body: 'At scale, the constraint isn\'t bookings or nightly rate. It\'s your time. The roadmap for 30+ is entirely about removing yourself from day-to-day operations without losing quality or income.',
+                    heading: 'At 30+ properties, you need a team with defined roles and shifts. Not more tools.',
+                    body: 'VirtuPro provides a dedicated team — not a platform, not software. Defined roles, 3 shifts, full accountability. Our clients at this stage stop working in the business entirely. The roadmap shows the exact handover structure.',
                   },
                 ].map(row => (
                   <div className="pain-row" key={row.i}>
@@ -384,7 +391,7 @@ function App() {
         <div className="container">
           <div className="ahmed-intro">
             <div className="ahmed-photo-wrap">
-              <img src={ahmedLondon} alt="Ahmed Khilji, VirtuPro Founder" className="ahmed-photo" />
+              <img src={ahmedMain} alt="Ahmed Khilji, VirtuPro Founder" className="ahmed-photo" />
             </div>
             <div className="ahmed-bio">
               <p className="eyebrow">Built from experience, not theory</p>
