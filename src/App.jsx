@@ -29,7 +29,7 @@ const ROADMAPS = [
     headline: 'Your next 20 units shouldn\'t cost you your evenings.',
     points: [
       'How to hand off guest communications without ratings dropping',
-      'The SOP framework VirtuPro uses across 2,000+ units — stripped down for independent owners',
+      'The SOP framework VirtuPro uses across 2,000+ units, stripped down for independent owners',
       'Cleaning and maintenance coordination that doesn\'t require you to chase anyone',
       'How to run dynamic pricing across 10+ listings without paying for expensive tools',
       'The review management system that keeps 4.9 intact as volume grows',
@@ -42,9 +42,9 @@ const ROADMAPS = [
     tag: 'True passive income',
     headline: 'At this scale, you\'re running a business. It needs to work like one.',
     points: [
-      'The team structure VirtuPro uses — roles, shifts, and accountability without micromanagement',
+      'The team structure VirtuPro uses: roles, shifts, and accountability without micromanagement',
       'How to build SOPs that let junior staff handle 90% of guest interactions correctly',
-      'Revenue optimisation at scale — occupancy, pricing, upsells, and claim recovery across 30+ units',
+      'Revenue optimisation at scale: occupancy, pricing, upsells, and claim recovery across 30+ units',
       'The reporting framework that tells you which properties earn, which drain, and why',
       'What "passive income" actually looks like at this size, and what still requires your attention',
     ],
@@ -260,7 +260,7 @@ function App() {
               Managing 5 properties is a different problem to managing 25. Most advice doesn't know the difference. This roadmap does.
             </p>
             <p className="desc">
-              VirtuPro manages 2,000+ UK holiday lets. This is the exact path — by portfolio size — that takes owners from overwhelmed to genuinely passive.
+              VirtuPro manages 2,000+ UK holiday lets. This is the exact path, by portfolio size, that takes owners from overwhelmed to genuinely passive.
             </p>
             <div className="hero-trust">
               <span className="hero-trust-item">2,000+ units managed</span>
@@ -325,7 +325,7 @@ function App() {
                   {
                     i: '01',
                     heading: 'What works at 3 properties breaks at 10.',
-                    body: 'Handling messages yourself is fine when you have 3 properties. At 10, it\'s 60+ messages a day. The systems don\'t scale — and neither do you. The roadmap shows you what to build before the volume hits.',
+                    body: 'Handling messages yourself is fine when you have 3 properties. At 10, it\'s 60+ messages a day. The systems don\'t scale. Neither do you. The roadmap shows you what to build before the volume hits.',
                   },
                   {
                     i: '02',
@@ -411,9 +411,9 @@ function App() {
             <h2>Stop following advice written for a different stage than yours.</h2>
             <p className="desc">Get the roadmap built for your exact portfolio size. Free, instant, no card.</p>
             <ul className="final-list">
-              <li>The 1–10 properties roadmap — get to 90% occupancy and stop managing at weekends</li>
-              <li>The 10–30 properties roadmap — scale without adding hours to your day</li>
-              <li>The 30+ properties roadmap — remove yourself from operations without income dropping</li>
+              <li>The 1–10 properties roadmap: get to 90% occupancy and stop managing at weekends</li>
+              <li>The 10–30 properties roadmap: scale without adding hours to your day</li>
+              <li>The 30+ properties roadmap: remove yourself from operations without income dropping</li>
               <li>Each includes the specific systems, SOPs, and communication frameworks VirtuPro uses</li>
             </ul>
           </div>
