@@ -199,7 +199,7 @@ function ThankYouPage({ data }) {
         <div className="container ty-pitch-single">
           <p className="eyebrow">One more thing</p>
           <h2 className="ty-pitch-heading">
-            Someone from Ahmed's team will reach out shortly.
+            Someone from VirtuPro will reach out shortly.
           </h2>
           <p className="ty-pitch-body">
             A 30-minute call, usually reserved for VirtuPro's existing clients. Free for qualified UK holiday let owners.
@@ -241,10 +241,6 @@ function ThankYouPage({ data }) {
 function App() {
   const [submitted, setSubmitted] = useState(null)
 
-  useEffect(() => {
-    if (window.fbq) window.fbq('track', 'PageView')
-  }, [])
-
   if (submitted) return <ThankYouPage data={submitted} />
 
   return (
@@ -262,7 +258,7 @@ function App() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Free for UK Holiday Let Owners</p>
-            <h1>The Roadmap to Handing Your Portfolio to a Team That Runs It for You.</h1>
+            <h1>The Roadmap to a<br />Fully Managed Portfolio.</h1>
             <p className="subline">
               Managing 5 properties needs a different operation to managing 25. This roadmap shows exactly what VirtuPro takes off your plate at each stage.
             </p>
